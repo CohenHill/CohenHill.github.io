@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore programming topics with these lessons for FTC robotics.">
+    <title>Lessons - FTC Programming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding-top: 60px;">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add fade-out animation when navigating to another page
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = link.href;
+                    }, 500);
+                });
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const savedTheme = localStorage.getItem('theme') || 'light-mode';
+
+            // Apply the saved theme
+            document.body.classList.add(savedTheme);
+            themeToggle.textContent = savedTheme === 'dark-mode' ? '⏾' : '☀';
+
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', () => {
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                document.body.classList.toggle('dark-mode', !isDarkMode);
+                document.body.classList.toggle('light-mode', isDarkMode);
+                themeToggle.textContent = isDarkMode ? '☀' : '⏾';
+                localStorage.setItem('theme', isDarkMode ? 'light-mode' : 'dark-mode');
+            });
+        });
+    </script>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="navbar" role="menu">
+            <li role="menuitem"><a href="index.html">Home</a></li>
+            <li role="menuitem"><a href="lessons.html">Lessons</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">☀</button>
+    </nav>
+
+    <!-- Lessons Content -->
+    <header>
+        <h1>Lessons</h1>
+        <p>Explore programming topics with these lessons:</p>
+    </header>
+    <section class="lessons">
+        <!-- Lesson 1 -->
+        <a href="PID.html" class="lesson-link">
+            <article class="lesson">
+                <img src="images/lesson1.jpg" alt="Lesson 1: PID Control">
+                <h2>Lesson 1: PID Control</h2>
+                <p>Learn what is a PID Controller and how to make your own</p>
+            </article>
+        </a>
+
+        <!-- Lesson 2 -->
+        <a href="lesson2.html" class="lesson-link">
+            <article class="lesson">
+                <img src="images/lesson2.jpg" alt="Lesson 2: Control Structures">
+                <h2>Lesson 2: Control Structures</h2>
+                <p>Understand how to use loops, conditionals, and other control structures</p>
+            </article>
+        </a>
+    </section>
+</body>
+</html>

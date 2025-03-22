@@ -1,7 +1,100 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn programming concepts and techniques for FTC robotics.">
+    <title>FTC Programming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding-top: 60px;">
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="navbar" role="menu">
+            <li role="menuitem"><a href="index.html">Home</a></li>
+            <li role="menuitem"><a href="lessons.html">Lessons</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">☀</button>
+    </nav>
+
+    <!-- Main Content -->
+    <header>
+        <h1>Welcome to FTC Programming</h1>
+        <p>Learn programming concepts and techniques for FTC robotics.</p>
+    </header>
+
+    <!-- Messaging System -->
+    <section>
+        <h2>Contact Me</h2>
+        <p>Have suggestions or feedback? Reach out to me using the form below:</p>
+        <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto;">
+            <input type="text" name="name" placeholder="Your Name" required 
+                style="padding: 10px; font-size: 1rem; border: 1px solid #ddd; border-radius: 5px;">
+            <input type="email" name="email" placeholder="Your Email" required 
+                style="padding: 10px; font-size: 1rem; border: 1px solid #ddd; border-radius: 5px;">
+            <textarea name="message" placeholder="Your Message" rows="5" required 
+                style="padding: 10px; font-size: 1rem; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+            <button type="submit" style="padding: 10px 20px; font-size: 1rem; font-weight: bold; color: #ffffff; background: #0A8992; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s ease;">
+                Send Message
+            </button>
+        </form>
+        <p id="form-response" style="margin-top: 15px; font-size: 1rem; color: #0A8992; display: none;">Thank you for your message!</p>
+    </section>
+
+    <script>
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const responseMessage = document.getElementById('form-response');
+            responseMessage.style.display = 'block';
+            setTimeout(() => {
+                responseMessage.style.display = 'none';
+                event.target.reset();
+            }, 3000);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const savedTheme = localStorage.getItem('theme') || 'light-mode';
+
+            // Apply the saved theme
+            document.body.classList.add(savedTheme);
+            themeToggle.textContent = savedTheme === 'dark-mode' ? '⏾' : '☀︎';
+
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', () => {
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                document.body.classList.toggle('dark-mode', !isDarkMode);
+                document.body.classList.toggle('light-mode', isDarkMode);
+                themeToggle.textContent = isDarkMode ? '☀︎' : '⏾';
+                localStorage.setItem('theme', isDarkMode ? 'light-mode' : 'dark-mode');
+            });
+        });
+    </script>
+
+    <style>
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
 </body>
 </html>

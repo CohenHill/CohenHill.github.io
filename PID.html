@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn programming concepts and techniques for FTC robotics with PID programming.">
+    <title>FTC Programming - PID</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // JavaScript to handle the switch bar functionality
+        function switchCode(language) {
+            // Show/hide code blocks
+            document.getElementById('java-code').style.display = language === 'java' ? 'block' : 'none';
+            document.getElementById('kotlin-code').style.display = language === 'kotlin' ? 'block' : 'none';
+
+            // Update active button
+            const buttons = document.querySelectorAll('.switch-bar button');
+            buttons.forEach(button => button.classList.remove('active'));
+            document.getElementById(`${language}-button`).classList.add('active');
+        }
+    </script>
+</head>
+<body style="padding-top: 60px;">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add fade-out animation when navigating to another page
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = link.href;
+                    }, 500);
+                });
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const savedTheme = localStorage.getItem('theme') || 'light-mode';
+
+            // Apply the saved theme
+            document.body.classList.add(savedTheme);
+            themeToggle.textContent = savedTheme === 'dark-mode' ? '⏾' : '☀';
+
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', () => {
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                document.body.classList.toggle('dark-mode', !isDarkMode);
+                document.body.classList.toggle('light-mode', isDarkMode);
+                themeToggle.textContent = isDarkMode ? '☀' : '⏾';
+                localStorage.setItem('theme', isDarkMode ? 'light-mode' : 'dark-mode');
+            });
+        });
+    </script>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="navbar" role="menu">
+            <li role="menuitem"><a href="index.html">Home</a></li>
+            <li role="menuitem"><a href="lessons.html">Lessons</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">☀</button>
+    </nav>
+
+    <!-- Main Content -->
+    <header>
+        <h1>Welcome to PID Programming</h1>
+        <p>Learn what is a PID Controller and how to make your own</p>
+    </header>
+
+    <!-- Video Section -->
+    <section>
+        <h2>Watch a Video on PID Loops</h2>
+        <div></div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/example_video_id" 
+                title="PID Loop Explanation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- PID Description Section -->
+    <section>
+        <h2>What is a PID Loop?</h2>
+        <p>
+            A PID (Proportional-Integral-Derivative) loop is a control algorithm used in robotics to achieve precise control of motors or other actuators. 
+            In the context of FTC Robotics, PID loops are commonly used to maintain consistent speed, position, or orientation of a robot. 
+            By adjusting the proportional, integral, and derivative terms, teams can fine-tune their robot's behavior to respond effectively to changes in the environment.
+        </p>
+    </section>
+
+    <!-- Code Example Section -->
+    <section>
+        <h2>How to Code a PID in the FTC Robot Controller</h2>
+        <div class="switch-bar">
+            <button id="java-button" class="active" onclick="switchCode('java')">Java</button>
+            <button id="kotlin-button" onclick="switchCode('kotlin')">Kotlin</button>
+        </div>
+        <div class="code-box">
+            <!-- Java Code -->
+            <pre id="java-code" style="display: block;">
+<code>
+public class PIDController {
+    private double kP, kI, kD;
+    private double previousError = 0;
+    private double integral = 0;
+
+    public PIDController(double kP, double kI, double kD) {
+        this.kP = kP;
+        this.kI = kI;
+        this.kD = kD;
+    }
+
+    public double calculate(double target, double current) {
+        double error = target - current;
+        integral += error;
+        double derivative = error - previousError;
+        previousError = error;
+        return (kP * error) + (kI * integral) + (kD * derivative);
+    }
+}
+</code>
+            </pre>
+
+            <!-- Kotlin Code -->
+            <pre id="kotlin-code" style="display: none;">
+<code>
+class PIDController(private val kP: Double, private val kI: Double, private val kD: Double) {
+    private var previousError = 0.0
+    private var integral = 0.0
+
+    fun calculate(target: Double, current: Double): Double {
+        val error = target - current
+        integral += error
+        val derivative = error - previousError
+        previousError = error
+        return (kP * error) + (kI * integral) + (kD * derivative)
+    }
+}
+</code>
+            </pre>
+        </div>
+    </section>
+
+    <style>
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+</body>
+</html>
