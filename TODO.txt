@@ -1,0 +1,80 @@
+website editions
+1. make creating lessons easier
+2. themes
+3. make contacting me work
+4. change domain name
+5. make the website more user-friendly
+6. organize lessons(maybe by skill, or diffirent things)
+
+lesson ideas
+1. diffireneces between onBotJava, Android Studio, onBotBlocks
+2. motor control, hardware control
+3. how to make a teleOp
+4. how to make a autonomous
+5. libraries
+6. mechanum control
+7. tank control
+8. what is spotless and how to set up spotless
+9. how to set up kotlin and how to use it/ what it is
+10. diffirent programming languages their draw backs (java,blocks,kotlin,C++)
+11. how to install libraries
+12. how to get GitHub education
+13. robot class
+14. subsystems
+15. camera stuff
+16. how to use IMU
+17. various sensors
+18. Bulk reading
+19. terminology
+20. helpfull websites("like gm0")
+21. xml files
+22. control theory
+23. how to set up plots with FTC Dash
+24. best practices
+25. swerve control
+26. servo control
+27. how to Github
+28. how to use FTC dashboard
+29. how to use rev hardware client
+30. how to adb
+31. how to use android studio
+32. encoders
+33. how to create tuing op modes
+34. LinearOp modes and opModes
+35. Finite State Machines
+36. odometry
+37. how to pass inspection
+38. why you should use command based programming
+39. implement object oriented programming
+40. RoadRunner vs Pedro
+
+
+libraries list
+1. FTCLIB
+2. RoadRunner
+3. State factory
+4. Photon
+5. NextFTC
+6. ExressWay
+7. PaperVision
+8. EOCV Sim
+9. HomeoStasis
+10. FTC Dash
+11. LiveAuto
+12. meep meep
+13. JOOS.
+14. FTC_FAST_LOAD,
+15. BlackSmith
+16. Dairy Util
+17. Dairy Sinister
+18. Dairy Core
+19. Dairy Pasteurized
+20. Dairy Mercurial
+21. Dairy Sloth
+22. Dairy WaveDash
+23. WittyDashboard
+24. wile e coyote
+25. open cv
+26. kuriosityRobotics shuttle
+27. SolversLib
+28. spotless

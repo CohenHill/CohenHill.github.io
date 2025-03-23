@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FTC Programming Lesson Template">
+    <title>Lesson Title</title> <!-- TODO: Replace with the specific lesson title -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // JavaScript to handle the switch bar functionality
+        function switchCode(language) {
+            // Show/hide code blocks
+            document.getElementById('java-code').style.display = language === 'java' ? 'block' : 'none';
+            document.getElementById('kotlin-code').style.display = language === 'kotlin' ? 'block' : 'none';
+
+            // Update active button
+            const buttons = document.querySelectorAll('.switch-bar button');
+            buttons.forEach(button => button.classList.remove('active'));
+            document.getElementById(`${language}-button`).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const savedTheme = localStorage.getItem('theme') || 'light-mode';
+
+            // Apply the saved theme
+            document.body.classList.add(savedTheme);
+            themeToggle.textContent = savedTheme === 'dark-mode' ? '⏾' : '☀';
+
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', () => {
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                document.body.classList.toggle('dark-mode', !isDarkMode);
+                document.body.classList.toggle('light-mode', isDarkMode);
+                themeToggle.textContent = isDarkMode ? '☀' : '⏾';
+                localStorage.setItem('theme', isDarkMode ? 'light-mode' : 'dark-mode');
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lessons.html">Lessons</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">☀</button>
+    </nav>
+
+    <!-- Main Content -->
+    <header>
+        <h1>Lesson Title</h1> <!-- TODO: Replace with the specific lesson title -->
+        <p>Lesson Subtitle or Description</p> <!-- TODO: Replace with a brief description of the lesson -->
+    </header>
+
+    <main>
+        <!-- Video Section -->
+        <section>
+            <h2>Watch a Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/example_video_id" 
+                title="Lesson Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe> <!-- TODO: Replace the YouTube video link with the specific lesson video -->
+        </section>
+
+        <!-- Lesson Content Section -->
+        <section>
+            <h2>Lesson Content</h2>
+            <p>Provide detailed explanations, examples, or instructions here.</p> <!-- TODO: Replace with the specific lesson content -->
+        </section>
+
+        <!-- Code Example Section -->
+        <section>
+            <h2>Sample Code</h2>
+            <div class="switch-bar">
+                <button id="java-button" class="active" onclick="switchCode('java')">Java</button>
+                <button id="kotlin-button" onclick="switchCode('kotlin')">Kotlin</button>
+            </div>
+            <div class="code-box">
+                <!-- Java Code -->
+                <pre id="java-code" style="display: block;">
+<code>
+// Sample Java code
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+</code>
+                </pre> <!-- TODO: Replace with the specific Java code example -->
+    
+                <!-- Kotlin Code -->
+                <pre id="kotlin-code" style="display: none;">
+<code>
+// Sample Kotlin code
+fun main() {
+    println("Hello, Kotlin!")
+}
+</code>
+                </pre> <!-- TODO: Replace with the specific Kotlin code example -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

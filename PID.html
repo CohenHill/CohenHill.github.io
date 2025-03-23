@@ -7,20 +7,24 @@
     <title>FTC Programming - PID</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        // JavaScript to handle the switch bar functionality
+        // JavaScript to handle the unified switch bar functionality
         function switchCode(language) {
-            // Show/hide code blocks
-            document.getElementById('java-code').style.display = language === 'java' ? 'block' : 'none';
-            document.getElementById('kotlin-code').style.display = language === 'kotlin' ? 'block' : 'none';
+            // Hide all code blocks and deactivate all buttons
+            document.querySelectorAll('.code-box pre').forEach(pre => pre.style.display = 'none');
+            document.querySelectorAll('.switch-bar button').forEach(button => button.classList.remove('active'));
 
-            // Update active button
-            const buttons = document.querySelectorAll('.switch-bar button');
-            buttons.forEach(button => button.classList.remove('active'));
-            document.getElementById(`${language}-button`).classList.add('active');
+            // Show the selected language's code blocks and activate the corresponding buttons
+            document.querySelectorAll(`.${language}-code`).forEach(el => el.style.display = 'block');
+            document.querySelectorAll(`.${language}-button`).forEach(btn => btn.classList.add('active'));
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set default language to Java on page load
+            switchCode('java');
+        });
     </script>
 </head>
-<body style="padding-top: 60px;">
+<body>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Add fade-out animation when navigating to another page
@@ -60,6 +64,10 @@
             <li role="menuitem"><a href="index.html">Home</a></li>
             <li role="menuitem"><a href="lessons.html">Lessons</a></li>
         </ul>
+        <div class="switch-bar">
+            <button class="java-button active" onclick="switchCode('java')">Java</button>
+            <button class="kotlin-button" onclick="switchCode('kotlin')">Kotlin</button>
+        </div>
         <button id="theme-toggle" aria-label="Toggle Dark Mode">☀</button>
     </nav>
 
@@ -72,12 +80,9 @@
     <!-- Video Section -->
     <section>
         <h2>Watch a Video on PID Loops</h2>
-        <div></div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/example_video_id" 
-                title="PID Loop Explanation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/example_video_id" 
+            title="PID Loop Explanation" allowfullscreen>
+        </iframe>
     </section>
 
     <!-- PID Description Section -->
@@ -93,13 +98,8 @@
     <!-- Code Example Section -->
     <section>
         <h2>How to Code a PID in the FTC Robot Controller</h2>
-        <div class="switch-bar">
-            <button id="java-button" class="active" onclick="switchCode('java')">Java</button>
-            <button id="kotlin-button" onclick="switchCode('kotlin')">Kotlin</button>
-        </div>
         <div class="code-box">
-            <!-- Java Code -->
-            <pre id="java-code" style="display: block;">
+            <pre class="java-code" style="display: block;">
 <code>
 public class PIDController {
     private double kP, kI, kD;
@@ -122,11 +122,9 @@ public class PIDController {
 }
 </code>
             </pre>
-
-            <!-- Kotlin Code -->
-            <pre id="kotlin-code" style="display: none;">
+            <pre class="kotlin-code" style="display: none;">
 <code>
-class PIDController(private val kP: Double, private val kI: Double, private val kD: Double) {
+class PIDController(private val kP: Double, private val kI: Double, private val kD: Double) { 
     private var previousError = 0.0
     private var integral = 0.0
 
@@ -143,28 +141,180 @@ class PIDController(private val kP: Double, private val kI: Double, private val 
         </div>
     </section>
 
-    <style>
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    <!-- Step-by-Step Walkthrough Section -->
+    <section>
+        <h2>Step-by-Step Walkthrough of the PID Code</h2>
+
+        <!-- Step 1 -->
+        <section>
+            <h3>Step 1: Define the PIDController Class</h3>
+            <p>Start by defining the class that will encapsulate the PID logic.</p>
+            <div class="code-box">
+                <pre class="java-code" style="display: block;">
+<code>
+public class PIDController {
+}
+</code>
+                </pre>
+                <pre class="kotlin-code" style="display: none;">
+<code>
+class PIDController {
+}
+</code>
+                </pre>
+            </div>
+        </section>
+
+        <!-- Step 2 -->
+        <section>
+            <h3>Step 2: Declare Constants</h3>
+            <p>Declare constants for proportional, integral, and derivative terms.</p>
+            <div class="code-box">
+                <pre class="java-code" style="display: block;">
+<code>
+public class PIDController {
+    private double kP, kI, kD;
+}
+</code>
+                </pre>
+                <pre class="kotlin-code" style="display: none;">
+<code>
+class PIDController(private val kP: Double, private val kI: Double, private val kD: Double) {
+}
+</code>
+                </pre>
+            </div>
+        </section>
+
+        <!-- Step 3 -->
+        <section>
+            <h3>Step 3: Track Previous Error</h3>
+            <p>Track the previous error to calculate the derivative term.</p>
+            <div class="code-box">
+                <pre class="java-code" style="display: block;">
+<code>
+public class PIDController {
+    private double kP, kI, kD;
+    private double previousError = 0;
+}
+</code>
+                </pre>
+                <pre class="kotlin-code" style="display: none;">
+<code>
+class PIDController(private val kP: Double, private val kI: Double, private val kD: Double) {
+    private var previousError = 0.0
+}
+</code>
+                </pre>
+            </div>
+        </section>
+
+        <!-- Step 4 -->
+        <section>
+            <h3>Step 4: Track Integral</h3>
+            <p>Track the integral of errors over time for the integral term.</p>
+            <div class="code-box">
+                <pre class="java-code" style="display: block;">
+<code>
+public class PIDController {
+    private double kP, kI, kD;
+    private double previousError = 0;
+    private double integral = 0;
+}
+</code>
+                </pre>
+                <pre class="kotlin-code" style="display: none;">
+<code>
+class PIDController(private val kP: Double, private val kI: Double, private val kD: Double) {
+    private var previousError = 0.0
+    private var integral = 0.0
+}
+</code>
+                </pre>
+            </div>
+        </section>
+
+        <!-- Step 5 -->
+        <section>
+            <h3>Step 5: Constructor</h3>
+            <p>Create a constructor to initialize the PID constants.</p>
+            <div class="code-box">
+                <pre class="java-code" style="display: block;">
+<code>
+public class PIDController {
+    private double kP, kI, kD;
+    private double previousError = 0;
+    private double integral = 0;
+
+    public PIDController(double kP, double kI, double kD) {
+        this.kP = kP;
+        this.kI = kI;
+        this.kD = kD;
+    }
+}
+</code>
+                </pre>
+                <pre class="kotlin-code" style="display: none;">
+<code>
+class PIDController(private val kP: Double, private val kI: Double, private val kD: Double) {
+    private var previousError = 0.0
+    private var integral = 0.0
+
+    init {
+        // Initialization logic if needed
+    }
+}
+</code>
+                </pre>
+            </div>
+        </section>
+
+        <!-- Step 6 -->
+        <section>
+            <h3>Step 6: Calculate PID Output</h3>
+            <p>Implement the method to calculate the PID output based on the target and current values.</p>
+            <div class="code-box">
+                <pre class="java-code" style="display: block;">
+<code>
+public class PIDController {
+    private double kP, kI, kD;
+    private double previousError = 0;
+    private double integral = 0;
+
+    public PIDController(double kP, double kI, double kD) {
+        this.kP = kP;
+        this.kI = kI;
+        this.kD = kD;
     }
 
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    public double calculate(double target, double current) {
+        double error = target - current; // Calculate the error
+        integral += error; // Accumulate the error for the integral term
+        double derivative = error - previousError; // Calculate the rate of change of error
+        previousError = error; // Update the previous error
+        return (kP * error) + (kI * integral) + (kD * derivative); // Compute the PID output
     }
-    </style>
+}
+</code>
+                </pre>
+                <pre class="kotlin-code" style="display: none;">
+<code>
+class PIDController(private val kP: Double, private val kI: Double, private val kD: Double) {
+    private var previousError = 0.0
+    private var integral = 0.0
+
+    fun calculate(target: Double, current: Double): Double {
+        val error = target - current // Calculate the error
+        integral += error // Accumulate the error for the integral term
+        val derivative = error - previousError // Calculate the rate of change of error
+        previousError = error // Update the previous error
+        return (kP * error) + (kI * integral) + (kD * derivative) // Compute the PID output
+    }
+}
+</code>
+                </pre>
+            </div>
+        </section>
+    </section>
 </body>
 </html>
