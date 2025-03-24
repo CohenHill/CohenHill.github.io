@@ -5,74 +5,255 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore programming topics with these lessons for FTC robotics.">
     <title>Lessons - FTC Programming</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            transition: transform 0.3s ease;
+            z-index: 1030;
+        }
+        
+        .main-content {
+            transition: margin-left 0.3s ease;
+        }
+        
+        .card-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            height: 50%;
+            padding: 0.75rem;
+        }
+        
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .bg-light {
+            background-color: #242424 !important;
+        }
+        
+        .dark-mode .card {
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+            border-color: #444;
+        }
+        
+        .dark-mode .text-dark {
+            color: #e0e0e0 !important;
+        }
+    </style>
 </head>
-<body style="padding-top: 60px;">
+<body class="pt-5">
+    <div class="d-flex">
+        <!-- Desktop Sidebar -->
+        <aside id="desktop-sidebar" class="sidebar bg-light border-end p-3 d-none d-md-block">
+            <h2 class="h5 mb-3">Lessons</h2>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    <a href="PID.html" class="nav-link text-dark p-0">Lesson 1: PID Control</a>
+                </li>
+                <li class="nav-item">
+                    <a href="templateLesson.html" class="nav-link text-dark p-0">Lesson 2: Control Structures</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Mobile Sidebar (Offcanvas) -->
+        <div class="offcanvas offcanvas-start bg-light" tabindex="-1" id="mobile-sidebar" aria-labelledby="sidebarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="sidebarLabel">Lessons</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="PID.html" class="nav-link text-dark p-0">Lesson 1: PID Control</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="templateLesson.html" class="nav-link text-dark p-0">Lesson 2: Control Structures</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content --> 
+        <main id="main-content" class="main-content flex-grow-1" style="margin-left: 0; padding: 0 15px;">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+                <div class="container-fluid">
+                    <!-- Single hamburger menu for mobile -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#navbarContent" aria-controls="navbarContent" 
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <a class="navbar-brand mx-auto mx-lg-0" href="#">FTC Programming</a>
+                    
+                    <!-- Desktop sidebar toggle - only visible on desktop -->
+                    <button class="btn btn-outline-light me-2 d-none d-md-block" type="button" id="sidebar-toggle" aria-label="Toggle sidebar">
+                        <span class="navbar-toggler-icon" style="width: 1.25em; height: 1.25em;"></span>
+                    </button>
+                    
+                    <!-- Combined navbar content for mobile and desktop -->
+                    <div class="collapse navbar-collapse" id="navbarContent">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="lessons.html">Lessons</a>
+                            </li>
+                            <!-- Mobile-only lesson links -->
+                            <li class="nav-item d-md-none mt-2">
+                                <h6 class="dropdown-header">Lessons</h6>
+                            </li>
+                            <li class="nav-item d-md-none">
+                                <a class="nav-link ps-4" href="PID.html">PID Control</a>
+                            </li>
+                            <li class="nav-item d-md-none">
+                                <a class="nav-link ps-4" href="templateLesson.html">Control Structures</a>
+                            </li>
+                        </ul>
+                        <!-- Theme toggle button -->
+                        <div class="d-flex align-items-center">
+                            <button id="theme-toggle" class="btn btn-outline-light">☀</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Page Header -->
+            <header class="bg-primary text-white text-center py-4 rounded mt-4">
+                <h1>Lessons</h1>
+                <p class="lead mb-0">Explore programming topics with these lessons:</p>
+            </header>
+
+            <!-- Lesson Cards -->
+            <section class="row mt-4 g-4 justify-content-center">
+                <!-- Lesson 1 -->
+                <div class="col-sm-10 col-md-6 col-lg-4 mb-4">
+                    <a href="PID.html" class="text-decoration-none text-reset">
+                        <div class="card h-100 mx-auto shadow-sm" style="max-width: 80%;">
+                            <div class="card-wrapper">
+                                <img src="images/PID.png" class="card-image rounded-top position-absolute top-0" alt="Lesson 1: PID Control">
+                                <div class="card-body card-content position-absolute bottom-0">
+                                    <h5 class="card-title">PID Control</h5>
+                                    <p class="card-text small">Learn what is a PID Controller and how to make your own</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Lesson 2 -->
+                <div class="col-sm-10 col-md-6 col-lg-4 mb-4">
+                    <a href="templateLesson.html" class="text-decoration-none text-reset">
+                        <div class="card h-100 mx-auto shadow-sm" style="max-width: 80%;">
+                            <div class="card-wrapper">
+                                <img src="images/lesson2.jpg" class="card-image rounded-top position-absolute top-0" alt="Lesson 2: Control Structures">
+                                <div class="card-body card-content position-absolute bottom-0">
+                                    <h5 class="card-title">Control Structures</h5>
+                                    <p class="card-text small">Understand how to use loops, conditionals, and other control structures</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Add fade-out animation when navigating to another page
-            const links = document.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', event => {
-                    event.preventDefault();
-                    document.body.classList.add('fade-out');
-                    setTimeout(() => {
-                        window.location.href = link.href;
-                    }, 500);
-                });
-            });
-
             // Theme toggle functionality
             const themeToggle = document.getElementById('theme-toggle');
-            const savedTheme = localStorage.getItem('theme') || 'light-mode';
-
-            // Apply the saved theme
-            document.body.classList.add(savedTheme);
-            themeToggle.textContent = savedTheme === 'dark-mode' ? '⏾' : '☀';
-
-            // Toggle theme on button click
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            let savedTheme = localStorage.getItem('theme');
+            
+            // If no saved theme, use system preference
+            if (!savedTheme) {
+                savedTheme = prefersDarkScheme.matches ? 'dark-mode' : 'light-mode';
+            }
+            
+            // Apply theme
+            if (savedTheme === 'dark-mode') {
+                document.body.classList.add('dark-mode');
+                themeToggle.textContent = '☽';
+            } else {
+                themeToggle.textContent = '☀';
+            }
+            
             themeToggle.addEventListener('click', () => {
                 const isDarkMode = document.body.classList.contains('dark-mode');
                 document.body.classList.toggle('dark-mode', !isDarkMode);
-                document.body.classList.toggle('light-mode', isDarkMode);
-                themeToggle.textContent = isDarkMode ? '☀' : '⏾';
+                themeToggle.textContent = isDarkMode ? '☀' : '☽';
                 localStorage.setItem('theme', isDarkMode ? 'light-mode' : 'dark-mode');
+            });
+
+            // Sidebar functionality
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const desktopSidebar = document.getElementById('desktop-sidebar');
+            const mainContent = document.getElementById('main-content');
+            
+            // Track sidebar state with localStorage
+            let isSidebarVisible = localStorage.getItem('sidebarVisible') !== 'false';
+            
+            sidebarToggle?.addEventListener('click', () => {
+                // Desktop view: toggle sidebar visibility
+                isSidebarVisible = !isSidebarVisible;
+                desktopSidebar.style.transform = isSidebarVisible ? 'translateX(0)' : 'translateX(-100%)';
+                mainContent.style.marginLeft = isSidebarVisible ? '250px' : '0';
+                localStorage.setItem('sidebarVisible', isSidebarVisible);
+            });
+
+            // Handle layout on page load and resize
+            const adjustLayout = () => {
+                const isMobile = window.innerWidth < 768;
+                
+                if (isMobile) {
+                    // Mobile layout
+                    desktopSidebar.style.transform = 'translateX(-100%)';
+                    mainContent.style.marginLeft = '0';
+                    mainContent.style.padding = '0 15px';
+                } else {
+                    // Desktop layout
+                    desktopSidebar.style.transform = isSidebarVisible ? 'translateX(0)' : 'translateX(-100%)';
+                    mainContent.style.marginLeft = isSidebarVisible ? '250px' : '0';
+                    mainContent.style.padding = '0 30px';
+                }
+            };
+            
+            // Initialize layout
+            adjustLayout();
+            
+            // Handle window resize
+            window.addEventListener('resize', adjustLayout);
+            
+            // Add accessibility keyboard support
+            sidebarToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    sidebarToggle.click();
+                }
             });
         });
     </script>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <ul class="navbar" role="menu">
-            <li role="menuitem"><a href="index.html">Home</a></li>
-            <li role="menuitem"><a href="lessons.html">Lessons</a></li>
-        </ul>
-        <button id="theme-toggle" aria-label="Toggle Dark Mode">☀</button>
-    </nav>
-
-    <!-- Lessons Content -->
-    <header>
-        <h1>Lessons</h1>
-        <p>Explore programming topics with these lessons:</p>
-    </header>
-    <section class="lessons">
-        <!-- Lesson 1 -->
-        <a href="PID.html" class="lesson-link">
-            <article class="lesson">
-                <img src="images/PID.png" alt="Lesson 1: PID Control">
-                <h2>Lesson 1: PID Control</h2>
-                <p>Learn what is a PID Controller and how to make your own</p>
-            </article>
-        </a>
-
-        <!-- Lesson 2 -->
-        <a href="templateLesson.html" class="lesson-link">
-            <article class="lesson">
-                <img src="images/lesson2.jpg" alt="Lesson 2: Control Structures">
-                <h2>Lesson 2: Control Structures</h2>
-                <p>Understand how to use loops, conditionals, and other control structures</p>
-            </article>
-        </a>
-    </section>
 </body>
 </html>

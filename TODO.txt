@@ -5,6 +5,7 @@ website editions
 4. change domain name
 5. make the website more user-friendly
 6. organize lessons(maybe by skill, or diffirent things)
+7. side bar with each lesson and drop down
 
 lesson ideas
 1. diffireneces between onBotJava, Android Studio, onBotBlocks
@@ -39,7 +40,7 @@ lesson ideas
 30. how to adb
 31. how to use android studio
 32. encoders
-33. how to create tuing op modes
+33. how to create tuning op modes
 34. LinearOp modes and opModes
 35. Finite State Machines
 36. odometry
@@ -47,6 +48,7 @@ lesson ideas
 38. why you should use command based programming
 39. implement object oriented programming
 40. RoadRunner vs Pedro
+41. Gradle
 
 
 libraries list
