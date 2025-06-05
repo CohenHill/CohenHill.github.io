@@ -1,41 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to FTC Programming.">
-    <title>Home - FTC Programming</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
 </head>
-<body class="pt-5">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">FTC Programming</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="lessons.html">Lessons</a></li>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
+    <nav class="navbar navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="#page-top">Cohen Hill</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <main class="container mt-5">
-        <header class="bg-primary text-white text-center py-4 rounded">
-            <h1>Welcome to FTC Programming</h1>
-            <p>Learn programming concepts for robotics and beyond.</p>
-        </header>
-
-        <section class="mt-4">
-            <h2>About Us</h2>
-            <p>FTC Programming is a resource for learning programming concepts...</p>
-            <!-- Add more content here -->
-        </section>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <header class="text-center text-white bg-primary masthead">
+        <div class="container">
+            <h1>Cohen Hill</h1>
+            <hr class="star-light">
+            <h2 class="fw-light mb-0">Student - Programmer - Aspiring Engineer</h2>
+        </div>
+    </header>
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary">Portfolio</h2>
+            <hr class="star-dark mb-5">
+            <div class="row">
+                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-1" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                        </div><img class="img-fluid bg-light border rounded-0" src="assets/img/portfolio/First%20Tech%20Challenge%20Logo.png" width="291" height="231" style="margin-left: 27px;">
+                    </a></div>
+                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-2" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                        </div><img class="img-fluid bg-light" src="assets/img/portfolio/FIRST%20Robotics%20Challenge%20Logo.png" width="336" height="238">
+                    </a></div>
+                <div class="col-md-12 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-3" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="assets/img/portfolio/BSA%20Logo.jpg">
+                    </a></div>
+            </div>
+        </div>
+    </section>
+    <section class="text-white bg-primary mb-0" id="about">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-white">About ME</h2>
+            <hr class="star-light mb-5">
+            <p class="lead text-center"><strong>I am a High Schooler at ASCTE class of 2027 my experience includes:</strong></p>
+            <p class="lead text-center"><strong>Programming</strong>: Java, Kotlin, JavaScript, Html, Css, and Python</p>
+            <p class="lead text-center">&nbsp;<strong>Robotics</strong>: First Robotics competition, First Tech Challenge</p>
+            <p class="lead text-center">Boy Scouts: working on my Eagle Scout</p>
+            <p class="lead text-center">Ambassador for my school: given tours to companies like the TVA and more</p>
+            <div class="text-center mt-4"></div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary mb-0">Contact Me</h2>
+            <hr class="star-dark mb-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm" name="sentMessage">
+                        <div>
+                            <div class="mb-0 form-floating pb-2"><input class="form-control" type="text" id="name" required="" placeholder="Name"><label class="form-label">Name</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div>
+                            <div class="mb-0 form-floating pb-2"><input class="form-control" type="email" id="email" required="" placeholder="Email Address"><label class="form-label">Email Address</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div>
+                            <div class="mb-0 form-floating pb-2"><input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number"><label class="form-label">Phone Number</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div>
+                            <div class="mb-5 form-floating pb-2"><textarea class="form-control" id="message" required="" placeholder="Message" style="height: 150px;"></textarea><label class="form-label">Message</label><small class="form-text text-danger help-block"></small></div>
+                        </div>
+                        <div id="success"></div>
+                        <div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h4 class="text-uppercase">Around the Web</h4><a class="btn btn-outline-light text-center btn-social rounded-circle" role="button" href="https://github.com/CohenHill#"><i class="fa fa-github fa-fw pe-sm-3 me-sm-0" style="font-size: 35px;margin-right: -20px;margin-left: -3px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="text-center text-white copyright py-4">
+        <div class="container"><small>Copyright ©&nbsp;Brand 2025</small></div>
+    </div>
+    <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-1">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">First Tech Challenge</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid bg-light mb-5" src="assets/img/portfolio/First%20Tech%20Challenge%20Logo.png">
+                                <h2 class="text-uppercase text-secondary mb-0">what is Ftc</h2>
+                                <p class="mb-5">FIRST Tech Challenge (FTC) is an international robotics competition for students, where teams design, build, and program robots to compete in dynamic, real-world inspired challenges. Using engineering principles, custom hardware, and programming in languages like Java, FTC participants collaborate in a high-pressure environment that mirrors professional tech projects.<br><br></p>
+                                <h2 class="text-uppercase text-secondary mb-0">What I did</h2>
+                                <p class="mb-5">I competed in FTC from 2023 to now as Software lead for my High School team.&nbsp;&nbsp;</p>
+                                <h2 class="text-uppercase text-secondary mb-0">why it matters</h2>
+                                <p class="mb-5">Participating in the FIRST Tech Challenge goes far beyond building a robot—it cultivates a well-rounded set of professional and interpersonal skills.&nbsp;</p>
+                                <p class="text-center mb-5" style="padding-top: 0px;margin-top: -35px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Through FTC, I learned how to:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+                                <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;Solve</strong> complex technical problems under real-world time constraints using engineering principles</p>
+                                <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;Collaborate</strong> effectively in diverse teams with clearly defined roles and shared project goals</p>
+                                <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;&nbsp;Program</strong> functional, real-world robotics systems using industry-standard languages like Java</p>
+                                <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;Present</strong> confidently in both formal pitch settings and public outreach initiatives</p>
+                                <p class="text-center mb-5" style="padding-top: 0px;margin-top: -40px;"><strong>·&nbsp;Mentor</strong> new and younger FTC teams by sharing technical knowledge and guiding their development</p>
+                                <h2 class="text-uppercase text-secondary mb-0">2024-2025 Robot</h2><img class="img-fluid bg-light mb-5" src="assets/img/portfolio/Caesar%20Circuitry%20Assembly%201.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="text-uppercase text-secondary mb-0">First Robotics Challenge</h2>
+                            <hr class="star-dark mb-5"><img class="img-fluid bg-light mb-5" src="assets/img/portfolio/FIRST%20Robotics%20Challenge%20Logo.png">
+                            <h2 class="text-uppercase text-secondary mb-0">what is FRc</h2>
+                            <p class="mb-5">FIRST Robotics Competition (FRC) is a global, high-level robotics challenge where high school teams design, build, and program industrial-grade robots to complete complex tasks on a dynamic game field. With strict time constraints, large team sizes, and real engineering demands, FRC mirrors the pace and collaboration of real-world product development and systems engineering.<br><br></p>
+                            <h2 class="text-uppercase text-secondary mb-0">What I did</h2>
+                            <p class="mb-5">I competed in FRC from 2025 to now as a Software member for a Community Robotics Team</p>
+                            <h2 class="text-uppercase text-secondary mb-0">why it matters</h2>
+                            <p class="mb-5">Being part of FRC means more than building an impressive robot—it’s about taking on real responsibility, solving tough problems, and engaging with the world beyond the competition.&nbsp;</p>
+                            <p class="text-center mb-5" style="padding-top: 0px;margin-top: -35px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Through FRC, I learned how to:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+                            <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;Design</strong> and build large-scale mechanical systems that balance durability, efficiency, and precision</p>
+                            <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;Program</strong> advanced robot control systems using tools like WPILib, Java/C++, and sensor integration</p>
+                            <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;&nbsp;Manage </strong>full project lifecycles—from brainstorming and prototyping to final execution</p>
+                            <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;Collaborate </strong>with professionals, sponsors, and other teams to share resources and ideas</p>
+                            <p class="text-center mb-5" style="padding-top: 0px;margin-top: -40px;"><strong>·&nbsp;Promote </strong>STEM in the community through outreach events, demos, and mentorship programs</p>
+                            <h2 class="text-uppercase text-secondary mb-0">2025 Robot</h2><img class="img-fluid bg-light mb-5" src="assets/img/portfolio/Aesthetic%20Robot%20Assembly.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-3">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Boy Scouts</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid bg-light mb-5" src="assets/img/portfolio/BSA%20Logo.jpg">
+                                <h2 class="text-uppercase text-secondary mb-0">what is Boy Scouts</h2>
+                                <p class="mb-5">The Boy Scouts of America (BSA) is one of the nation's most respected youth leadership and character development organizations. Through a structured program of outdoor skills, service, advancement, and leadership, Scouts develop real-world capabilities that extend far beyond camping trips.<br><br></p>
+                                <h2 class="text-uppercase text-secondary mb-0">What I did</h2>
+                                <p class="mb-5">As a Life Scout, a member of the Order of the Arrow, and the Senior Patrol Leader (SPL) of a large troop, I held one of the most demanding youth leadership roles available in Scouting.&nbsp;</p>
+                                <h2 class="text-uppercase text-secondary mb-0">why it matters</h2>
+                                <p class="text-center mb-5" style="padding-top: 0px;margin-top: 3px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Through Boy Scouts, I learned how to:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+                                <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;Lead </strong>a large, diverse group of peers through weekly meetings, camping trips, and major events</p>
+                                <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;Organize </strong>and delegate responsibilities across multiple patrols and junior leaders</p>
+                                <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;&nbsp;Mentor </strong>younger Scouts and help guide them through rank advancement and personal growth</p>
+                                <p class="text-center mb-5" style="margin-top: -40px;"><strong>·&nbsp;Plan and execute </strong>complex activities—from multi-day campouts to troop meetings</p>
+                                <p class="text-center mb-5" style="padding-top: 0px;margin-top: -40px;"><strong>·&nbsp;Work toward Eagle Scout, </strong>demonstrating sustained commitment, initiative, and leadership in service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-4">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/game.png">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-5">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/safe.png">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-6">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/submarine.png">
+                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/freelancer.js"></script>
 </body>
+
 </html>
